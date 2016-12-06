@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% if not train %}
+{% for train in trains %}
+     Номер {{train.num}} : {{ train.st_from }} - {{ train.st_till }}, отправление: {{ train.st_from_dt }} прибытие {{ train.st_till_dt }}, время в дороге {{ train.travel_time }}
+     <br>
+     {% for t in train.tp %}
+       {{ t }} <br>
+     {% endfor %}
+    <br>
+{% endfor %}
+{% endif %}
+</body>
+</html>
